@@ -101,3 +101,4 @@ E:\GitHUB\BookStore\BookStore\bin\ru\System.Web.WebPages.Deployment.resources.dl
 E:\GitHUB\BookStore\BookStore\bin\ru\System.Web.WebPages.Razor.resources.dll
 E:\GitHUB\BookStore\BookStore\obj\Debug\BookStore.dll
 E:\GitHUB\BookStore\BookStore\obj\Debug\BookStore.pdb
+E:\GitHUB\BookStore\BookStore\obj\Debug\BookStore.csprojResolveAssemblyReference.cache
