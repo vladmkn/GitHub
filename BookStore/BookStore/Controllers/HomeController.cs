@@ -18,6 +18,8 @@ namespace BookStore.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Message = "Это вызов частичного представления из обычного";
+
             // получаем из бд все объекты Book
             IEnumerable<Book> books = db.Books;
             // передаем все объекты в динамическое свойство Books в ViewBag
@@ -132,6 +134,12 @@ namespace BookStore.Controllers
             IEnumerable<Book> books = await db.Books.ToListAsync();
             ViewBag.Books = books;
             return View("Index");
+        }
+
+        public ActionResult Partial()
+        {
+            ViewBag.Message = "Это частичное представление.";
+            return PartialView();
         }
     }
 }

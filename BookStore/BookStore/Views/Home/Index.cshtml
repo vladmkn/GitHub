@@ -1,8 +1,34 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using BookStore.Helpers
+@helper BookList(IEnumerable<BookStore.Models.Book> books)
+{
+    <ul>
+        @foreach (BookStore.Models.Book b in books)
+        {
+            <li>@b.Name</li>
+        }
+    </ul>
+}
+@helper CreateList(string[] all)
+{
+    <ul>
+        @foreach (string s in all)
+        {
+            <li>@s</li>
+        }
+    </ul>
+}
+@{
+    string[] cities = new string[] { "Лондон", "Париж", "Москва" };
+}
+@{
+    string[] countries = new string[] { "Великобритания", "Франция", "Россия" };
+}
 <div>
     <h3>Распродажа книг</h3>
+    @Html.Partial("Partial", new string[] { "Russia", "USA", "Canada", "France" })
     <table>
         <tr class="header">
             <td><p>Название книги</p></td>
@@ -20,4 +46,18 @@
             </tr>
         }
     </table>
+    @BookList(ViewBag.Books)
+    <h3>Города</h3>
+    @CreateList(cities)
+    <br />
+    <h3>Страны</h3>
+    @CreateList(countries)
+
+    @MyHelpers.HtmlList(new string[] { "Лондон", "Париж", "Берлин" })
+    @Html.CreateList(countries)
+    @ListHelper.CreateList(Html, new string[] { "Лондон", "Париж", "Берлин" })
+    @Html.CreateList(new string[] { "Лондон", "Париж", "Берлин" }, new { @class = "btn", id = "citiesList" })
+
+
+    @Html.Image("/Images/Прилуцкий.png", "Тестовое изображение")
 </div>
